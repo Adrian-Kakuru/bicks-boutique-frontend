@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiences | Bick's Boutique Hotel</title>
+    <meta name="description"
+        content="Explore our grounds, garden atrium, and private pathways. A retreat defined by greenery and fresh air.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;1,400&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Page Specific Styles */
+        .hero {
+            height: 75vh;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1));
+        }
+
+        .intro {
+            padding: 120px 0;
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+        }
+
+        .exp-container {
+            padding-bottom: var(--spacing-section);
+        }
+
+        .exp-module {
+            display: flex;
+            align-items: center;
+            margin-bottom: 150px;
+            gap: 8%;
+            padding: 0 var(--spacing-container);
+        }
+
+        .exp-module.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .exp-visual {
+            flex: 1.5;
+            height: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .exp-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s ease-out;
+        }
+
+        .exp-visual:hover img {
+            transform: scale(1.03);
+        }
+
+        .exp-content {
+            flex: 1;
+        }
+
+        .exp-name {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .exp-mood {
+            font-style: italic;
+            color: var(--gold);
+            font-family: var(--font-body);
+            margin-bottom: 25px;
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        .exp-desc {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .exp-details {
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            color: var(--navy);
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sensory-break {
+            height: 60vh;
+            width: 100%;
+            background-image: url('assets/images/walk.png');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sensory-text {
+            color: var(--navy);
+            background: rgba(249, 248, 244, 0.9);
+            padding: 40px 60px;
+            font-size: 1.5rem;
+            font-style: italic;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .in-hotel {
+            padding: var(--spacing-section) var(--spacing-container);
+            background-color: var(--white);
+        }
+
+        .grid-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .in-hotel-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .hotel-item {
+            text-align: center;
+        }
+
+        .hotel-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 30px;
+            filter: brightness(0.95);
+        }
+
+        .hotel-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hotel-item p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            font-family: var(--font-ui);
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .local-knowledge {
+            padding: 120px var(--spacing-container);
+            background-color: #F1F0EB;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .local-knowledge h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .local-knowledge p {
+            max-width: 600px;
+            margin-bottom: 40px;
+            color: var(--text-gray);
+        }
+
+        .bridge {
+            padding: 120px 0;
+            text-align: center;
+            background-color: var(--ivory);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .bridge h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+
+        .bridge p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #777;
+            font-weight: 300;
+        }
+
+        @media (max-width: 900px) {
+
+            .exp-module,
+            .exp-module.reverse {
+                flex-direction: column;
+                gap: 40px;
+                margin-bottom: 100px;
+            }
+
+            .exp-visual {
+                width: 100%;
+                height: 400px;
+            }
+
+            .in-hotel-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="hero-nav">
+        <div class="nav-logo"><img src="assets/images/logo.png" alt="Bick's" style="height: 40px;"></div>
+        <div>
+            <a href="index.html" class="nav-link" style="margin-right: 20px;">Home</a>
+            <a href="rooms.html" class="nav-link" style="margin-right: 20px;">Rooms</a>
+            <a href="dining.html" class="nav-link" style="margin-right: 20px;">Dining</a>
+            <a href="experiences.html" class="nav-link active" style="margin-right: 20px;">Experiences</a>
+            <a href="gallery.html" class="nav-link" style="margin-right: 20px;">Gallery</a>
+            <a href="contact_us.html" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="assets/images/experience_hero.png" alt="Garden Path" class="hero-bg">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content reveal">
+            <h1>Nature's Quiet Path</h1>
+            <p>A retreat defined by greenery, fresh air,<br>and the freedom to roam.</p>
+        </div>
+    </section>
+
+    <section class="intro reveal">
+        <p>There’s no checklist at Bick’s. Whether you are here to focus on work or disconnect from it, our grounds are
+            designed to meet you where you are. Walk the paths, find your corner, and let the day unfold.</p>
+        <div class="divider"></div>
+    </section>
+
+    <div class="exp-container">
+
+        <div class="exp-module reveal">
+            <div class="exp-visual">
+                <img src="assets/images/office1.png" alt="The Glass Boardroom">
+            </div>
+            <div class="exp-content">
+                <h3 class="exp-name">The Garden Atrium</h3>
+                <span class="exp-mood">Natural light. Focused minds. Collaborative spirit.</span>
+                <p class="exp-desc">A meeting space that doesn't feel like an office. Surrounded by glass walls and
+                    garden views, it offers a setting designed for clarity, conversation, and productive retreats.</p>
+                <div class="exp-details">Co-working • Private Hire</div>
+            </div>
+        </div>
+
+        <div class="exp-module reverse reveal">
+            <div class="exp-visual">
+                <img src="assets/images/walk.png" alt="Village Walkways">
+            </div>
+            <div class="exp-content">
+                <h3 class="exp-name">The Village Stroll</h3>
+                <span class="exp-mood">Morning stillness. Paved paths. Open sky.</span>
+                <p class="exp-desc">Wander through the heart of the property. Our cottage-style layout invites you to
+                    step outside your door and explore the connecting pathways that weave the hotel together.</p>
+                <div class="exp-details">Self-Guided • Peaceful</div>
+            </div>
+        </div>
+
+        <div class="exp-module reveal">
+            <div class="exp-visual">
+                <img src="assets/images/walk3.png" alt="Modern Cottages">
+            </div>
+            <div class="exp-content">
+                <h3 class="exp-name">Stone & Symmetry</h3>
+                <span class="exp-mood">Modern stone. Blue skies. Personal sanctuary.</span>
+                <p class="exp-desc">Experience the unique architecture of Bick's. Grey stone cottages stand in rhythm,
+                    offering a sense of community while ensuring your privacy remains uninterrupted.</p>
+                <div class="exp-details">Private Entry • Garden Views</div>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="sensory-break">
+        <div class="sensory-text reveal">Some plans are better made after a walk.</div>
+    </section>
+
+    <section class="in-hotel reveal">
+        <div class="grid-header">
+            <h2>Within Our Walls</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="in-hotel-grid">
+
+            <div class="hotel-item">
+                <img src="assets/images/another_office_shot.png" alt="Evening Workspace">
+                <h3>Evening Focus</h3>
+                <p>A quiet, warm space for late-night inspiration or intimate gatherings when the sun goes down.</p>
+            </div>
+
+            <div class="hotel-item">
+                <img src="assets/images/toilet1.jpeg" alt="Modern Design Details">
+                <h3>Modern Geometries</h3>
+                <p>Appreciate the bold geometric details and modern finishes that bring character to every corner of
+                    your stay.
+                </p>
+            </div>
+
+            <div class="hotel-item">
+                <img src="assets/images/outdoor_sidewalk.jpeg" alt="Garden Edge">
+                <h3>Perimeter Walks</h3>
+                <p>Take the long way back to your room along the garden edge, where the property meets the horizon.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="local-knowledge reveal">
+        <h2>We Don’t Hand Out Lists</h2>
+        <p>We make recommendations. Our team knows the neighborhood by heart and is happy to suggest galleries, cafés,
+            walks, or places that don’t appear on maps.</p>
+        <a href="contact_us.html" class="btn btn-text">Speak With Our Team</a>
+    </section>
+
+    <section class="quote-section reveal">
+        <div class="quote-text">“We planned one afternoon — and ended up staying out all day.”</div>
+    </section>
+
+    <section class="bridge reveal">
+        <h2>Every stay unfolds differently.</h2>
+        <p>We’d love to help shape yours.</p>
+        <div style="display: flex; gap: 30px; justify-content: center; align-items: center;">
+            <a href="booking.html" class="btn btn-gold">Book Your Stay</a>
+            <a href="rooms.html" class="btn-text" style="border-bottom: 1px solid var(--navy);">View Rooms</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-left">
+            <div class="footer-logo">Bick's Boutique Hotel</div>
+            <p>Kampala, Hoima<br>+256 700 000 000</p>
+        </div>
+        <div class="footer-right">
+            <div class="footer-socials">
+                <a href="#">IG</a>
+                <a href="#">FB</a>
+                <a href="#">TW</a>
+            </div>
+            <br>
+            <p style="opacity: 0.5; font-size: 0.8rem;">© Bick’s Boutique Hotel — Timeless by Design</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

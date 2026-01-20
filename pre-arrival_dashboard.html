@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Stay Awaits | Bick's Boutique Hotel</title>
+    <meta name="description" content="Manage your upcoming stay, view your itinerary, and curate your experience.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;1,400&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Inline override for specific layout if needed, but style.css now has main dashboard styles -->
+</head>
+
+<body>
+
+    <div class="dashboard-wrapper">
+
+        <aside class="sidebar">
+            <div>
+                <div class="logo">Bick's</div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#" class="nav-link active"><span>🧳</span> Upcoming Stay</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><span>🌿</span> Experiences</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><span>🍷</span> Dining</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><span>👤</span> Account</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <p>&copy; 2023 Bick's Boutique Hotel</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="dash-hero">
+                <div class="dash-hero-content">
+                    <h1>Your Stay Awaits, James</h1>
+                    <p>A few details to prepare for your visit — rooms, dining, and curated experiences.</p>
+                </div>
+            </header>
+
+            <div class="content-container">
+
+                <div class="dash-card">
+                    <div class="card-header">
+                        <h3>Upcoming Reservation</h3>
+                        <span class="status-pill">Confirmed</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="stay-grid">
+                            <div>
+                                <span class="info-label">Room</span>
+                                <span class="info-value">The Heritage Suite</span>
+                                <span class="mood-line">Tall ceilings. Soft light.</span>
+                            </div>
+                            <div>
+                                <span class="info-label">Check In</span>
+                                <span class="info-value">Nov 14</span>
+                                <span class="info-label" style="margin-top:5px; margin-bottom:0;">After 3:00 PM</span>
+                            </div>
+                            <div>
+                                <span class="info-label">Check Out</span>
+                                <span class="info-value">Nov 17</span>
+                                <span class="info-label" style="margin-top:5px; margin-bottom:0;">By 11:00 AM</span>
+                            </div>
+                            <div>
+                                <span class="info-label">Guests</span>
+                                <span class="info-value">2 Adults</span>
+                            </div>
+                        </div>
+                        <div
+                            style="border-top: 1px solid #eee; padding-top: 20px; margin-top: 10px; display: flex; gap: 20px;">
+                            <a href="#" class="btn-text">View Room Details</a>
+                            <a href="#" class="btn-text" style="color: #999;">Modify Booking</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-header">
+                    <h2>Curate Your Days</h2>
+                    <a href="#" class="btn-text">Explore All</a>
+                </div>
+
+                <div class="suggestions-grid">
+                    <div class="suggestion-card">
+                        <div>
+                            <h4 class="sugg-title">Architectural Walk</h4>
+                            <p class="sugg-desc">A guided stroll focusing on the overlooked details that give our
+                                district its soul.</p>
+                        </div>
+                        <div class="sugg-meta">
+                            <span class="info-label">Daily • 10:00 AM</span>
+                            <button class="btn-text" style="color: var(--gold);">Add to Stay</button>
+                        </div>
+                    </div>
+
+                    <div class="suggestion-card">
+                        <div>
+                            <h4 class="sugg-title">Evening Tasting</h4>
+                            <p class="sugg-desc">Seasonal wine pours hosted by local makers in the privacy of the
+                                Lounge.</p>
+                        </div>
+                        <div class="sugg-meta">
+                            <span class="info-label">Nov 15 • 6:00 PM</span>
+                            <button class="btn-text" style="color: var(--gold);">Add to Stay</button>
+                        </div>
+                    </div>
+
+                    <div class="suggestion-card" style="background: #fdfdfc;">
+                        <div>
+                            <h4 class="sugg-title">Dinner at Bick's</h4>
+                            <p class="sugg-desc">Secure a table for your first evening. Seasonal tasting menu available.
+                            </p>
+                        </div>
+                        <div class="sugg-meta">
+                            <span class="info-label">Tables Filling Fast</span>
+                            <button class="btn-text" style="color: var(--gold);">Reserve Table</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-header">
+                    <h2>Arrival & Directions</h2>
+                </div>
+
+                <div class="dash-card">
+                    <div class="card-header">
+                        <h3>Finding Us</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="travel-layout">
+                            <div>
+                                <span class="info-label">Address</span>
+                                <span class="info-value" style="margin-bottom: 20px;">123 Quiet Ave, Historic
+                                    District</span>
+
+                                <span class="info-label">Transport</span>
+                                <p class="sugg-desc">We recommend a private car from the airport. Valet parking is
+                                    available upon arrival.</p>
+
+                                <br>
+                                <a href="#" class="btn-gold">Get Directions</a>
+                            </div>
+                            <div class="map-placeholder">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concierge-bar">
+                    <div>
+                        <h3
+                            style="font-family: var(--font-head); font-size: 1.5rem; margin-bottom: 10px; color: var(--gold);">
+                            Planning something special?</h3>
+                        <p style="font-family: var(--font-ui); opacity: 0.8;">Let us know, and we’ll prepare it for your
+                            arrival.</p>
+                    </div>
+                    <button class="btn-outline" style="border-color: rgba(255,255,255,0.3); color: var(--ivory);">Send a
+                        Request</button>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dining & Lounge | Bick's Boutique Hotel</title>
+    <meta name="description"
+        content="Experience seasonally inspired dining in our Glasshouse or cocktails in the Atrium Lounge.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;1,400&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Page Specific Styles */
+        .hero {
+            height: 75vh;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+        }
+
+        .intro {
+            padding: 120px 0;
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .split-section {
+            display: flex;
+            align-items: center;
+            min-height: 600px;
+        }
+
+        .split-visual {
+            flex: 1;
+            height: 700px;
+        }
+
+        .split-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .split-content {
+            flex: 1;
+            padding: 0 var(--spacing-container);
+        }
+
+        .split-content h2 {
+            font-size: 3rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .split-content p {
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            max-width: 450px;
+        }
+
+        .feature-list {
+            list-style: none;
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            color: var(--navy);
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li::before {
+            content: '•';
+            color: var(--gold);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .food-section {
+            padding: var(--spacing-section) var(--spacing-container);
+        }
+
+        .food-block {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .food-block img {
+            width: 50%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .food-text {
+            width: 40%;
+        }
+
+        .food-text h3 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .menu-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-family: var(--font-ui);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 4px;
+        }
+
+        .lounge {
+            background-color: var(--navy);
+            color: var(--ivory);
+            padding: var(--spacing-section) var(--spacing-container);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lounge-content {
+            flex: 1;
+            z-index: 2;
+        }
+
+        .lounge h2 {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .lounge p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            max-width: 450px;
+            margin-bottom: 30px;
+        }
+
+        .lounge-img {
+            flex: 1.2;
+            height: 500px;
+            object-fit: cover;
+            opacity: 0.8;
+            border-left: 1px solid rgba(198, 168, 124, 0.2);
+        }
+
+        .sensory-break {
+            height: 70vh;
+            width: 100%;
+            background-image: url('assets/images/dining_hero.png');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sensory-text {
+            color: var(--ivory);
+            font-size: 1.8rem;
+            font-style: italic;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .practical {
+            padding: 100px var(--spacing-container);
+            background-color: var(--white);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .info-col h4 {
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .info-col p {
+            font-family: var(--font-ui);
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .reserve-block {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .bridge {
+            padding: 100px 0;
+            text-align: center;
+            background-color: #F1F0EB;
+        }
+
+        .bridge h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--navy);
+        }
+
+        .bridge p {
+            font-family: var(--font-body);
+            font-style: italic;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 900px) {
+
+            .split-section,
+            .food-block,
+            .lounge,
+            .practical {
+                flex-direction: column;
+            }
+
+            .split-visual {
+                width: 100%;
+                height: 400px;
+            }
+
+            .food-block img {
+                width: 100%;
+            }
+
+            .food-text {
+                width: 100%;
+                margin-top: 30px;
+            }
+
+            .lounge {
+                text-align: left;
+                gap: 30px;
+            }
+
+            .lounge-img {
+                width: 100%;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="hero-nav">
+        <div class="nav-logo"><img src="assets/images/logo.png" alt="Bick's" style="height: 40px;"></div>
+        <div>
+            <a href="index.html" class="nav-link" style="margin-right: 20px;">Home</a>
+            <a href="rooms.html" class="nav-link" style="margin-right: 20px;">Rooms</a>
+            <a href="dining.html" class="nav-link active" style="margin-right: 20px;">Dining</a>
+            <a href="experiences.html" class="nav-link" style="margin-right: 20px;">Experiences</a>
+            <a href="gallery.html" class="nav-link" style="margin-right: 20px;">Gallery</a>
+            <a href="contact_us.html" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <img src="assets/images/dining_hero.png" alt="Evening Atmosphere" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <h1>Amber Light &<br>Glass</h1>
+            <p>A warm sanctuary set against the night, where<br>architecture frames the evening.</p>
+        </div>
+    </section>
+
+    <section class="intro reveal">
+        <h2>Philosophy of the Table</h2>
+        <div class="divider"></div>
+        <p>Dining at Bick’s is unhurried by design. Our menus follow the seasons, our ingredients follow the market, and
+            our evenings unfold at their own pace. This is a place to stay a little longer than planned.</p>
+    </section>
+
+    <section class="split-section">
+        <div class="split-visual reveal">
+            <img src="assets/images/dining1.png" alt="The Dining Room">
+        </div>
+        <div class="split-content reveal">
+            <h2>The Glasshouse</h2>
+            <p>An industrial frame for an intimate experience. Floor-to-ceiling windows blur the line between the garden
+                and the table, offering protection from the elements while keeping you connected to the sky.</p>
+            <ul class="feature-list">
+                <li>Dinner service nightly</li>
+                <li>Indoor-outdoor connection</li>
+                <li>Vegetarian & vegan options</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="food-section">
+        <div class="food-block reveal">
+            <div class="food-text">
+                <h3>The Menu</h3>
+                <p>Rooted in simple, honest ingredients. Whether it's a slow morning coffee or a curated dinner, every
+                    dish is prepared with intention.</p>
+                <a href="#" class="menu-link">View Sample Menu (PDF)</a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop"
+                alt="Seasonal Dish">
+        </div>
+    </section>
+
+    <section class="lounge reveal">
+        <div class="lounge-content">
+            <h2>The Atrium Lounge</h2>
+            <p>Defined by its striking glass roof and grid ceiling. Sun-drenched by day and star-lit by night, this is
+                the hotel's social heart for coffee, cocktails, and conversation.</p>
+            <ul class="feature-list" style="color: var(--ivory); opacity: 0.7;">
+                <li>Skylight ambiance</li>
+                <li>Local spirits</li>
+                <li>Light bites</li>
+            </ul>
+        </div>
+        <img src="assets/images/cafeteria_two.jpeg" alt="Cocktail Lounge" class="lounge-img">
+    </section>
+
+    <section class="sensory-break">
+        <div class="sensory-text reveal">Some evenings don’t need plans.</div>
+    </section>
+
+    <section class="practical reveal">
+        <div class="info-col">
+            <h4>Hours</h4>
+            <p><strong>Dinner:</strong> 6pm – 10pm</p>
+            <p><strong>Lounge:</strong> 5pm – Late</p>
+        </div>
+        <div class="info-col">
+            <h4>Reservations</h4>
+            <p>Reservations recommended. Hotel guests receive priority seating.</p>
+            <div class="reserve-block">
+                <a href="#" class="btn btn-outline">Reserve a Table</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section reveal">
+        <div class="quote-text">“Dinner turned into drinks, drinks turned into hours, and suddenly it was midnight.”
+        </div>
+    </section>
+
+    <section class="bridge reveal">
+        <h3>Staying with us?</h3>
+        <p>Your table is waiting.</p>
+        <div style="display: flex; justify-content: center; gap: 20px;">
+            <a href="rooms.html" class="btn btn-gold">Book Your Stay</a>
+            <a href="rooms.html" class="menu-link" style="margin-top: 15px; border-bottom-color: var(--navy);">View
+                Rooms</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-left">
+            <div class="footer-logo">Bick's Boutique Hotel</div>
+            <p>Kampala, Hoima<br>+256 700 000 000</p>
+        </div>
+        <div class="footer-right">
+            <div class="footer-socials">
+                <a href="#">IG</a>
+                <a href="#">FB</a>
+                <a href="#">TW</a>
+            </div>
+            <br>
+            <p style="opacity: 0.5; font-size: 0.8rem;">© Bick’s Boutique Hotel — Timeless by Design</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

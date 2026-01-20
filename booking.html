@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve Your Stay | Bick's Boutique Hotel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;1,400&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.8); z-index: 9999; justify-content: center; align-items: center; flex-direction: column;">
+        <div
+            style="border: 4px solid #f3f3f3; border-top: 4px solid var(--gold); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite;">
+        </div>
+        <p style="margin-top: 20px; color: var(--navy);">Processing...</p>
+    </div>
+    <style>
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <nav class="hero-nav">
+        <div class="nav-logo"><img src="assets/images/logo.png" alt="Bick's" style="height: 40px;"></div>
+        <div>
+            <a href="index.html" class="nav-link" style="margin-right: 20px;">Home</a>
+            <a href="rooms.html" class="nav-link" style="margin-right: 20px;">Rooms</a>
+            <a href="dining.html" class="nav-link" style="margin-right: 20px;">Dining</a>
+            <a href="experiences.html" class="nav-link" style="margin-right: 20px;">Experiences</a>
+            <a href="gallery.html" class="nav-link" style="margin-right: 20px;">Gallery</a>
+            <a href="contact_us.html" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero-booking">
+        <img src="assets/images/booking_hero.png" alt="Calm Corridor" class="hero-bg">
+        <div class="hero-content">
+            <h1>Begin Your Stay</h1>
+            <p>A few details, thoughtfully handled.</p>
+        </div>
+    </section>
+
+    <div class="progress-bar">
+        <div class="step active" id="indicator-1">01 Dates</div>
+        <div class="step" id="indicator-2">02 Room</div>
+        <div class="step" id="indicator-3">03 Guests</div>
+        <div class="step" id="indicator-4">04 Payment</div>
+    </div>
+
+    <div class="booking-container">
+
+        <!-- Step 1: Dates -->
+        <div class="booking-step active-step" id="step-1">
+            <div class="date-card">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="checkIn">Check In</label>
+                        <input type="date" id="checkIn">
+                    </div>
+                    <div class="input-group">
+                        <label for="checkOut">Check Out</label>
+                        <input type="date" id="checkOut">
+                    </div>
+                </div>
+                <!-- Inline Error -->
+                <span class="error-inline" id="date-error"
+                    style="color: #d9534f; font-size: 0.9rem; display: none; margin-bottom: 20px; display: block;"></span>
+                <div class="input-group">
+                    <label for="guests">Guests</label>
+                    <select id="guests">
+                        <option value="2">2 Adults</option>
+                        <option value="1">1 Adult</option>
+                        <option value="3">2 Adults, 1 Child</option>
+                    </select>
+                </div>
+                <span class="microcopy">Your room will be prepared for your arrival.</span>
+                <button class="btn btn-gold" id="searchAvailabilityBtn">Continue</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Room Selection -->
+        <div class="booking-step" id="step-2">
+            <div class="room-select-list" id="room-list-container">
+                <!-- Dynamic Content Loads Here -->
+                <p style="text-align: center; opacity: 0.6;">Loading available rooms...</p>
+            </div>
+            <br>
+            <button class="btn btn-outline" style="margin: 0 auto; display: block;" onclick="goToStep(1)">Back</button>
+        </div>
+
+        <!-- Step 3: Confirmation -->
+        <div class="booking-step" id="step-3">
+            <div class="review-layout">
+
+                <div class="summary-box">
+                    <h3>Your Stay</h3>
+                    <div class="summary-row">
+                        <span>Check In</span>
+                        <span id="summary-checkIn">-</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Check Out</span>
+                        <span id="summary-checkOut">-</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Room</span>
+                        <span id="summary-room-name">-</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Total Price</span>
+                        <span id="summary-total">-</span>
+                    </div>
+                    <p class="cancel-policy">Cancellation is flexible up to 48 hours before arrival.</p>
+                </div>
+
+                <div class="guest-form">
+                    <h3 style="margin-bottom: 30px;">Guest Details</h3>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>First Name</label>
+                            <input type="text" id="firstName" placeholder="e.g. James">
+                        </div>
+                        <div class="input-group">
+                            <label>Last Name</label>
+                            <input type="text" id="lastName" placeholder="e.g. Bick">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" id="email" placeholder="james@example.com">
+                    </div>
+                    <div class="input-group">
+                        <label>Phone Number (for Mobile Money)</label>
+                        <input type="text" id="phone" placeholder="+256 700 000000">
+                    </div>
+                    <br>
+                    <button class="btn btn-gold" id="confirmBookingBtn">Confirm Reservation</button>
+                    <br><br>
+                    <button class="btn btn-outline" onclick="goToStep(2)" style="width: 100%;">Back</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Step 4: Payment -->
+        <div class="booking-step" id="step-4">
+            <div class="confirmation-msg" style="max-width: 500px;">
+                <div style="background: #f8f9fa; padding: 30px; border-radius: 8px; border: 1px solid #e9ecef;">
+                    <h3>Complete Your Payment</h3>
+                    <p style="margin-bottom: 20px; color: #666;">Total to pay: <strong id="pay-amount">-</strong></p>
+
+                    <p style="font-size: 0.9rem; color: #888; margin-bottom: 30px;">
+                        Secure payment processing via Flutterwave.
+                    </p>
+
+                    <a id="pay-now-btn" href="#" class="btn btn-gold"
+                        style="width: 100%; text-align: center; display: block; margin-bottom: 15px;">Proceed to
+                        Payment</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4.5: Verifying Payment (Hidden by default) -->
+        <div class="booking-step" id="step-verifying">
+            <div class="confirmation-msg">
+                <div
+                    style="border: 4px solid #f3f3f3; border-top: 4px solid var(--gold); border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 0 auto 20px;">
+                </div>
+                <h3>Verifying Payment...</h3>
+                <p style="color: #666;">Please wait while we confirm your transaction.</p>
+            </div>
+        </div>
+
+        <!-- Step 5: Success -->
+        <div class="booking-step" id="step-5">
+            <div class="confirmation-msg">
+                <span class="check-mark">✓</span>
+                <h2>Your stay at Bick’s is confirmed.</h2>
+                <div class="divider" style="width: 50px; height: 1px; background: var(--gold); margin: 30px auto;">
+                </div>
+                <p style="font-size: 1.1rem; color: #555;">We’ll take care of the details.<br>You just need to arrive.
+                </p>
+                <br><br>
+                <a href="experiences.html" class="btn btn-outline"
+                    style="display: inline-block; width: auto; padding: 12px 40px;">Explore the Neighborhood</a>
+            </div>
+        </div>
+
+        <!-- Step Error: Failure -->
+        <div class="booking-step" id="step-error">
+            <div class="confirmation-msg">
+                <span class="check-mark" style="border-color: #d9534f; color: #d9534f;">!</span>
+                <h2 id="error-title">Booking could not be completed.</h2>
+                <div class="divider" style="width: 50px; height: 1px; background: #d9534f; margin: 30px auto;"></div>
+                <p id="error-message" style="font-size: 1.1rem; color: #555;">We encountered an issue holding your room.
+                </p>
+                <br><br>
+                <button class="btn btn-gold" onclick="goToStep(3)">Try Again</button>
+                <a href="contact_us.html" class="btn btn-outline" style="margin-left: 10px;">Contact Us</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/booking.js"></script>
+</body>
+
+</html>
