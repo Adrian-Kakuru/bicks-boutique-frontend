@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Bick's Boutique Hotel</title>
+    <title>Bick's Boutique Hotel | Timeless by Design</title>
     <meta name="description"
-        content="Get in touch for room recommendations, dining reservations, or special requests. We're here to help.">
+        content="A private village defined by quiet pathways, warm light, and modern comfort. Experience luxury at Bick's Boutique Hotel.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +15,117 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Page-Specific Overrides or Critical CSS if needed */
+        .story-img {
+            background-image: url('assets/images/walk1.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .rooms-section {
+            padding: var(--spacing-section) 0;
+            background: #fff;
+        }
+
+        .section-header {
+            padding-left: var(--spacing-container);
+            margin-bottom: 50px;
+        }
+
+        .rooms-scroll {
+            display: flex;
+            overflow-x: auto;
+            padding-left: var(--spacing-container);
+            padding-bottom: 40px;
+            gap: 40px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .rooms-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .room-card {
+            min-width: 400px;
+            flex-shrink: 0;
+        }
+
+        .room-img {
+            height: 500px;
+            width: 100%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .room-info h3 {
+            font-size: 1.8rem;
+            color: var(--navy);
+        }
+
+        .room-info p {
+            font-style: italic;
+            color: #666;
+            margin: 10px 0 20px;
+        }
+
+        .location-visual {
+            background-color: #e5e5e5;
+            background-image: url('assets/images/dining1.png');
+            background-size: cover;
+            min-height: 500px;
+        }
+
+        .testimonials {
+            padding: var(--spacing-section) var(--spacing-container);
+            text-align: center;
+            background: var(--white);
+        }
+
+        .review {
+            font-size: 1.5rem;
+            color: var(--navy);
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        .final-cta {
+            background-color: var(--navy);
+            color: var(--ivory);
+            text-align: center;
+            padding: 150px 20px;
+        }
+
+        .final-cta h2 {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .final-cta p {
+            margin-bottom: 40px;
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .rooms-scroll {
+                flex-direction: column;
+                gap: 60px;
+                overflow: visible;
+            }
+
+            .room-card {
+                min-width: 100%;
+            }
+
+            .room-img {
+                height: 300px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -22,117 +133,115 @@
     <nav class="nav-standard">
         <div class="nav-logo"><img src="assets/images/logo.png" alt="Bick's" style="height: 40px;"></div>
         <div>
-            <a href="index.html" class="nav-link" style="margin-right: 20px;">Home</a>
+            <a href="index.html" class="nav-link active" style="margin-right: 20px;">Home</a>
             <a href="rooms.html" class="nav-link" style="margin-right: 20px;">Rooms</a>
             <a href="dining.html" class="nav-link" style="margin-right: 20px;">Dining</a>
             <a href="experiences.html" class="nav-link" style="margin-right: 20px;">Experiences</a>
             <a href="gallery.html" class="nav-link" style="margin-right: 20px;">Gallery</a>
-            <a href="contact_us.html" class="nav-link active">Contact</a>
+            <a href="contact_us.html" class="nav-link">Contact</a>
         </div>
     </nav>
 
-    <section class="hero" style="height: 70vh;">
-        <img src="assets/images/contact_us.png" alt="Quiet Corner" class="hero-bg">
+    <section class="hero">
+        <img src="assets/images/home_hero.png" alt="Bick's Hotel at Dusk" class="hero-bg">
         <div class="hero-overlay"></div>
-
-        <div class="hero-content reveal">
-            <h1>We’re Here to Help</h1>
-            <p>Questions, special requests, or simply planning ahead — we’re always happy to hear from you.</p>
-        </div>
-    </section>
-
-    <section class="intro reveal">
-        <p>Whether you’re planning your first stay or returning for another, our team is available to help with anything
-            you might need — from room recommendations to local advice.</p>
-        <div class="divider"></div>
-    </section>
-
-    <section class="methods reveal">
-
-        <div class="method-card">
-            <span class="method-icon">📞</span>
-            <h3>By Phone</h3>
-            <p>Speak directly with our front desk.</p>
-            <span class="method-detail">+256 700 000 000</span>
-            <span class="microcopy">Available daily, 8am–10pm</span>
-        </div>
-
-        <div class="method-card">
-            <span class="method-icon">✉️</span>
-            <h3>By Email</h3>
-            <p>For detailed questions or special arrangements.</p>
-            <span class="method-detail">hello@bicks.com</span>
-            <span class="microcopy">We usually respond same day</span>
-        </div>
-
-        <div class="method-card">
-            <span class="method-icon">🕰</span>
-            <h3>In Person</h3>
-            <p>Visit us in the heart of the historic district.</p>
-            <span class="method-detail">123 Quiet Ave</span>
-            <span class="microcopy">Hoima</span>
-        </div>
-
-    </section>
-
-    <section class="form-section reveal">
-        <div class="form-card">
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text" placeholder="How should we address you?">
-            </div>
-
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" placeholder="Where can we reach you?">
-            </div>
-
-            <div class="form-group">
-                <label>How can we help?</label>
-                <select>
-                    <option>General Inquiry</option>
-                    <option>Room Recommendation</option>
-                    <option>Dining Reservation</option>
-                    <option>Special Request</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Message</label>
-                <textarea rows="4" placeholder="Let us know how we can help..."></textarea>
-            </div>
-
-            <div style="text-align: center;">
-                <button class="btn btn-gold">Send Message</button>
-                <br><br>
-                <span class="microcopy">We’ll get back to you shortly.</span>
+        <div class="hero-content">
+            <h1>Sanctuary<br>at Dusk</h1>
+            <p>A private village defined by quiet pathways, warm light, and modern comfort.</p>
+            <div class="cta-group">
+                <a href="booking.html" class="btn btn-gold">Reserve Your Stay</a>
+                <a href="experiences.html" class="btn btn-link">Explore the Experience</a>
             </div>
         </div>
     </section>
 
-    <section class="map-section reveal">
-        <div class="map-content">
-            <h2>Find Us</h2>
-            <div style="width: 40px; height: 1px; background: var(--gold); margin-bottom: 20px;"></div>
-            <p>Located on a quiet street within walking distance of galleries, cafés, and the city’s most storied
-                corners.</p>
+    <section class="story">
+        <div class="story-img"></div>
+        <div class="story-content">
+            <h2>A Village of Your Own</h2>
+            <div class="divider"></div>
             <br>
-            <a href="#" class="btn btn-text">Get Directions</a>
-        </div>
-        <div class="map-visual">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15951.847683057106!2d31.3524!3d1.4331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177cbaad37243933%3A0xe53051bc294c6c9a!2sHoima%2C%20Uganda!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>Bick’s isn’t just a hotel; it’s a collection of private retreats. From the stone-paved walkways to the
+                independent modern cottages, every element is designed to give you space, silence, and the freedom to
+                roam.<br><br>Here, you don’t just check in — you arrive.</p>
         </div>
     </section>
 
-    <section class="closing reveal">
-        <p>We look forward to welcoming you.</p>
-        <div style="display: flex; gap: 30px; justify-content: center; align-items: center;">
-            <a href="booking.html" class="btn btn-gold">Book Your Stay</a>
-            <a href="rooms.html" class="btn-text" style="border-bottom: 1px solid var(--navy);">View Rooms</a>
+    <section class="highlights">
+        <div class="card">
+            <h3>The Rooms</h3>
+            <p>Private cottages featuring custom embroidery, high ceilings, and garden access.</p>
+            <a href="rooms.html" class="card-link">View Rooms</a>
+        </div>
+        <div class="card">
+            <h3>Dining & Lounge</h3>
+            <p>Glass-walled dining under the stars and a sun-drenched atrium lounge.</p>
+            <a href="dining.html" class="card-link">Discover Dining</a>
+        </div>
+        <div class="card">
+            <h3>Garden & Work</h3>
+            <p>Wander the grounds or find focus in our garden-view meeting spaces.</p>
+            <a href="experiences.html" class="card-link">Explore Experiences</a>
         </div>
     </section>
+
+    <section class="quote-section">
+        <div class="quote-text">“Luxury isn’t excess — it’s intention.”</div>
+        <div class="quote-sub">— Bick’s Philosophy</div>
+    </section>
+
+    <section class="rooms-section">
+        <div class="section-header">
+            <h2>Our Suites</h2>
+        </div>
+        <div class="rooms-scroll">
+            <div class="room-card">
+                <img src="assets/images/room1.png" alt="Signature King" class="room-img">
+                <div class="room-info">
+                    <h3>The Signature King</h3>
+                    <p>Crisp linens. Deep rest. Custom comfort.</p>
+                    <a href="rooms.html" class="btn btn-gold">View Details</a>
+                </div>
+            </div>
+            <div class="room-card">
+                <img src="assets/images/room2.png" alt="Garden Loft" class="room-img">
+                <div class="room-info">
+                    <h3>The Garden Loft</h3>
+                    <p>Soaring height. Natural light. Breathing room.</p>
+                    <a href="rooms.html" class="btn btn-gold">View Details</a>
+                </div>
+            </div>
+            <div class="room-card">
+                <img src="assets/images/room3.png" alt="Courtyard Room" class="room-img">
+                <div class="room-info">
+                    <h3>The Courtyard Room</h3>
+                    <p>Geometric lines. Private entry. Grounded ease.</p>
+                    <a href="rooms.html" class="btn btn-gold">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location">
+        <div class="location-text">
+            <h2>Secluded Haven</h2>
+            <div class="divider"></div>
+            <br>
+            <p>Tucked away from the noise, yet connected to the essentials. Whether you're dining in our glasshouse or
+                walking the perimeter gardens, you'll feel miles away from the ordinary.</p>
+            <br>
+            <a href="experiences.html" class="btn btn-gold" style="width: max-content;">Explore the Grounds</a>
+        </div>
+        <div class="location-visual"></div>
+    </section>
+
+    <section class="testimonials">
+        <div class="review">
+            “The cottage layout gave us so much privacy. It felt like we had the whole place to ourselves.”
+        </div>
+    </section>
+
+    <!-- Final CTA Removed -->
 
     <footer>
         <div class="footer-left">
@@ -149,8 +258,6 @@
             <p style="opacity: 0.5; font-size: 0.8rem;">© Bick’s Boutique Hotel — Timeless by Design</p>
         </div>
     </footer>
-
-    <script src="assets/js/main.js"></script>
 
 </body>
 
